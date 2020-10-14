@@ -11,3 +11,7 @@
 
 
 -- YOUR CODE HERE
+
+INSERT INTO ingredients
+VALUES
+(DEFAULT, $1, $2, $3, $4);

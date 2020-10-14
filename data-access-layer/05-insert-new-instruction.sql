@@ -43,3 +43,10 @@
 
 
 -- YOUR CODE HERE
+INSERT INTO instructions (id, specification, list_order, recipe_id)
+VALUES
+(DEFAULT, $1, (
+    SELECT COALESCE(MAX(list_order), 0) + 1
+    FROM instructions
+    WHERE recipe_id = $2
+), $2);
